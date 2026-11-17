@@ -104,9 +104,7 @@ python main.py
 ├── rag_embedding/
 │   ├── create_chunk.py        # Chunk generation
 │   └── embedding.py           # Vector store generation and sync
-├── raw_terraform_docs/        # Raw Terraform documentation
-├── raw_terraform_examples/    # Raw Terraform examples
-├── evaluation/                # Evaluation scripts and benchmark data
+├── chroma_db_storage/         # Local Chroma DB storage directory
 ├── main.py                    # Entry point
 ├── requirements.txt           # Python dependencies
 ├── README.md                  # Chinese documentation
@@ -117,7 +115,6 @@ python main.py
 └── .venv/                     # Local Python environment
 ```
 
-> Note: runtime artifacts such as `workspaces/`, `chroma_db_storage/`, `chunks_cache/`, `sandbox_docker/`, and `temp/` are kept local and excluded from Git.
 
 ## Notes
 

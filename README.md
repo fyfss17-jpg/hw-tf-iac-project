@@ -113,8 +113,6 @@ python main.py
 ├── LICENSE                    # MIT 开源协议
 ```
 
-> 说明：`workspaces/`、`chroma_db_storage/`、`chunks_cache/` 等目录通常会保留为本地运行产物，不建议全量提交到 Git。
-
 ## 注意事项
 
 - 首次运行前需要准备知识库，尤其是本地 Chroma 数据。

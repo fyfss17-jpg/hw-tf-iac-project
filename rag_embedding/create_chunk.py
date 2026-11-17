@@ -15,8 +15,7 @@ import re
 
 def parse_and_chunk_md(file_path, file_content=None):
     """
-    智能切片器（针对华为云专属优化版）
-    完美适配：标准 Resource、index.md (Provider 凭证)、remote_state_backend.md
+    华为云切片器：标准 Resource、index.md (Provider 凭证)、remote_state_backend.md
     """
     # 支持直接传入内容或读取文件
     if file_content:
