@@ -1,0 +1,60 @@
+# Python runtime and local env
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Local secrets and env files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+
+# Local runtime artifacts
+workspaces/
+raw_terraform_docs/
+raw_terraform_examples/
+chroma_db_storage/
+chunks_cache/
+evaluation/
+knowledge_base_cache.json
+temptest.txt
+temp/
+sandbox_docker/
+
+# Local logs and temporary files
+*.log
+*.tmp
+*.bak
+*.orig
+
+# Docker / Terraform local state
+*.tfplan
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# Notebook cache
+.ipynb_checkpoints/
+
+# Packaging/build cache
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

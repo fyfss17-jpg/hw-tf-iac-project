@@ -1,0 +1,13 @@
+# Core runtime dependencies for the Terraform agent
+langgraph
+langchain-openai
+langchain-core
+pydantic
+
+# Vector database and model clients
+chromadb
+openai
+dashscope
+
+# Utilities used by chunk generation / preprocessing scripts
+transformers
