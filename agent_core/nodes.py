@@ -338,28 +338,28 @@ def sandbox_validate_node(state: TerraformAgentState) -> dict:
                         violations = expressions[0].get("value", [])
 
                     if violations:
-                    # OPA 扫描到了合规违规项（安全卡点拦截）
+                        # OPA 扫描到了合规违规项（安全卡点拦截）
                         logger.warning(
                             "[OPA 安全合规拦截] 发现 %s 处违规风险，准备交由反思/提示节点处理...",
                             len(violations),
                         )
-                    formatted_violations = "\n".join([f"- {v}" for v in violations])
-                    return {
-                        "validation_passed": True,  # Terraform 语法没问题，但是安全没过
-                        "security_passed": False,
-                        "error_message": (
-                            f"【OPA 安全合规检查未通过】:\n{formatted_violations}"
-                        ),
-                        "retry_count": retry_count + 1,
-                    }
-                else:
-                    # Terraform 合法，且 OPA 检查 0 违规
-                    logger.info("[安全全通] Terraform 语法合法 且 OPA 华为云合规硬校验完美通过！")
-                    return {
-                        "validation_passed": True,
-                        "security_passed": True,
-                        "error_message": None,
-                    }
+                        formatted_violations = "\n".join([f"- {v}" for v in violations])
+                        return {
+                            "validation_passed": True,  # Terraform 语法没问题，但是安全没过
+                            "security_passed": False,
+                            "error_message": (
+                                f"【OPA 安全合规检查未通过】:\n{formatted_violations}"
+                            ),
+                            "retry_count": retry_count + 1,
+                        }
+                    else:
+                        # Terraform 合法，且 OPA 检查 0 违规
+                        logger.info("[安全全通] Terraform 语法合法 且 OPA 华为云合规硬校验完美通过！")
+                        return {
+                            "validation_passed": True,
+                            "security_passed": True,
+                            "error_message": None,
+                        }
 
             except json.JSONDecodeError:
                 # 如果输出不是合法的 JSON（理论上不该发生，除非 shell 脚本其他地方打印了杂音）
